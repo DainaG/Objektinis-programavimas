@@ -3,52 +3,40 @@
 #include <iostream>
 #include <array>
 #include <vector>
-using namespace std;
-
-int main(){
-    int size;
-    bool tr = true;
-    vector<int> arr;
-	while (tr == true){
-        cout << "Please insert element ";
-        cin >> size;
-        if (size != 0){
-            arr.push_back(size);
-        }
-        else{
-            tr = false;
-        }
-    }
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << " ";
-}
-*/
-/* 1.2 */
-/*
-#include <iostream>
-#include <array>
-#include <vector>
 #include <string>
 using namespace std;
 
+
 int main(){
-    string size;
+    int num;
+    string word;
     bool tr = true;
-    vector<string> arr;
+    vector<int> narr;
+    vector<string> sarr;
 	while (tr == true){
         cout << "Please insert element ";
-        cin >> size;
-        if (size != "-"){
-            arr.push_back(size);
-        }
-        else{
+        cin >> num;
+        if (num != 0)
+            narr.push_back(num);
+        else
             tr = false;
-        }
     }
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << " ";
-}*/
-
+    tr = true;
+   while (tr == true){
+        cout << "Please insert word ";
+        cin >> word;
+        if (word != "-")
+            sarr.push_back(word);
+        else
+            tr = false;
+    }
+    for (auto it = narr.begin(); it != narr.end(); it++)
+        cout << *it << " ";
+    cout << endl;
+    for (auto it = sarr.begin(); it != sarr.end(); it++)
+        cout << *it << " ";
+}
+*/
 /* 2 */
 /*
 #include <iostream>
@@ -63,21 +51,19 @@ void Swap (int* x, int* y);
 int main(){
     int size;
     bool tr = true;
-    vector<int> arr;
-	while (tr == true){
+    vector<int> narr;
+    while (tr == true){
         cout << "Please insert element ";
         cin >> size;
-        if (size != 0){
-            arr.push_back(size);
-        }
-        else{
+        if (size != 0)
+            narr.push_back(size);
+        else
             tr = false;
-        }
     }
-	int size = sizeof(arr)/sizeof(arr[0]);
-	BubbleSort(arr, size);
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << " ";
+    int size = sizeof(narr)/sizeof(narr[0]);
+    BubbleSort(arr, size);
+    for (int i = 0; i < size; i++)
+        cout << narr[i] << " ";
 }
 
 void Swap (int* x, int* y){
